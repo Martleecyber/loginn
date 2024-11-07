@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <!-- Sign In Form -->
+        <div class="form-container sign-in-container" id="signInContainer">
+            <form onsubmit="handleSignIn(event)">
+                <h1>Sign In</h1>
+                <input type="email" id="loginEmail" placeholder="Email" required />
+                <div class="password-container">
+                    <input type="password" id="login-password" placeholder="Password">
+                    <span class="toggle-password" onclick="togglePassword('login-password')">
+                        👁️
+                    </span>
+                </div>
+                <button type="submit">Sign In</button>
+                <p>Don’t have an account? <span onclick="toggleForm()" class="toggle-link" > <a href="#signUpContainer">Sign Up</a></span></p>
+            </form>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="form-container sign-up-container" id="signUpContainer">
+            <form onsubmit="handleSignUp(event)">
+                <h1>Create Account</h1>
+                <input type="text" id="signUpName" placeholder="Name" required />
+                <input type="email" id="signUpEmail" placeholder="Email" required />
+                <div class="password-container">
+                    <input type="password" id="login-password" placeholder="Password">
+                    <span class="toggle-password" onclick="togglePassword('login-password')">
+                        👁️
+                    </span>
+                </div>
+                <button type="submit">Sign Up</button>
+                <p>Already have an account? <span onclick="toggleForm()" class="toggle-link">Sign In</span></p>
+            </form>
+        </div>
+
+        <!-- Overlay Panel for Animation -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us, please login with your personal info</p>
+                    <button class="ghost" onclick="toggleForm()">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start your journey with us</p>
+                    <button class="ghost" onclick="toggleForm()" >Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
